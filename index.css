@@ -619,7 +619,6 @@ body {
   font-weight: 700;
   color: hsl(var(--primary));
   margin-bottom: 1.5rem;
-  transform: scaleX(1.15);
 }
 
 @media (min-width: 48rem) {
@@ -909,4 +908,5 @@ body {
 .footer-legal a:hover {
   color: hsl(var(--accent));
 }
+
 
