@@ -714,7 +714,6 @@ body {
   font-weight: 700;
   color: hsl(var(--primary));
   margin-bottom: 1rem;
-  transform: scaleX(1.15);
 }
 
 .final-cta-title .highlight {
@@ -910,3 +909,4 @@ body {
 .footer-legal a:hover {
   color: hsl(var(--accent));
 }
+
