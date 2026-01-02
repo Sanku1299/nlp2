@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary: 220 65% 33%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 174 55% 42%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 43 66% 52%;
+  --accent-foreground: 220 65% 15%;
+  --background: 216 47% 98%;
+  --foreground: 0 0% 10%;
+  --muted: 216 30% 94%;
+  --muted-foreground: 0 0% 33%;
+  --border: 216 20% 88%;
+  --radius: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: hsl(var(--primary));
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.header-inner {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: hsl(var(--accent));
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Georgia", serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.logo-text {
+  color: hsl(var(--primary-foreground));
+  font-family: "Georgia", serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: hsl(var(--radius));
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: hsl(var(--accent));
+}
+
+.nav-link.active {
+  color: hsl(var(--accent));
+}
+
+/* CTA */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.phone-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.875rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: hsl(var(--radius));
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.btn-cta {
+  background: hsl(var(--accent));
+  color: #1A1A1A;
+}
+
+/* MOBILE */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: hsl(var(--primary-foreground));
+  font-size: 1.5rem;
+}
+
+.mobile-nav {
+  display: none;
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+}
+
+.mobile-nav .nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+}
+
+.mobile-cta {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn.full {
+  width: 100%;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 64rem) {
+
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* HERO */
+.services-hero {
+  position: relative;
+  background: hsl(var(--primary));
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+@media (min-width: 48rem) {
+  .services-hero {
+    padding: 6rem 0;
+  }
+}
+
+/* BACKGROUND */
+.hero-bg {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to right,
+      hsl(var(--primary) / 0.9),
+      hsl(var(--primary) / 0.75),
+      transparent);
+}
+
+.hero-content {
+  max-width: 48rem;
+  padding-left: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.services-hero h1 {
+  font-family: "Georgia", serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: hsl(var(--primary-foreground));
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: hsl(var(--primary-foreground) / 0.9);
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  color: hsl(var(--primary-foreground) / 0.8);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-hero {
+  background: hsl(var(--accent));
+  color: #1A1A1A;
+}
+
+.btn-hero-outline {
+  border: 0.125rem solid hsl(var(--accent));
+  color: hsl(var(--accent));
+}
+
+/* TRUST BADGES */
+.trust-badges {
+  background: hsl(var(--card));
+  border-bottom: 0.0625rem solid hsl(var(--border));
+  padding: 1.5rem 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.badge {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+/* SERVICES DETAIL */
+.services-detail {
+  padding: 4rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: "Georgia", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  color: hsl(var(--primary));
+}
+
+.section-header p {
+  color: hsl(var(--muted-foreground));
+}
+
+.divider {
+  width: 6rem;
+  height: 0.25rem;
+  background: hsl(var(--secondary));
+  margin: 1.5rem auto 0;
+}
+
+/* GRID */
+.services-grid {
+  max-width: 64rem;
+  margin: 0 auto 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.service-card {
+  background: hsl(var(--card));
+  border: 0.0625rem solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.service-head {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 0.75rem 1.5rem;
+  font-family: "Georgia", serif;
+  font-weight: 700;
+  font-size: 1.12rem;
+}
+
+.service-card ul {
+  padding: 1.5rem;
+  list-style: none;
+}
+
+.dot{
+  color: hsl(var(--secondary));
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.service-card li {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.arr{
+  color: hsl(43 60% 52% / var(--tw-text-opacity, 1));
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+/* INTEGRATED */
+.integrated-service {
+  max-width: 64rem;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  border: 0.0625rem solid hsl(var(--border));
+  overflow: hidden;
+}
+
+.integrated-head {
+  background: hsl(var(--accent));
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  padding: 0.75rem;
+  font-family: "Georgia", serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.integrated-service ul {
+  padding: 1.5rem;
+  background: hsl(var(--card));
+  list-style: none;
+}
+
+.integrated-service li {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+/* CTA */
+.services-cta {
+  background: hsl(var(--muted));
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.services-cta h2 {
+  font-family: "Georgia", serif;
+  color: hsl(var(--primary));
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.services-cta p {
+  color: hsl(var(--muted-foreground));
+  max-width: 42rem;
+  line-height: 1.75rem;
+  margin: 0 auto 2rem;
+}
+
+.btn-xl {
+  padding: 0.875rem 2.5rem;
+  font-size: 1rem;
+}
+
+.btn-cta {
+  background: hsl(var(--accent));
+  color: #1A1A1A;
+}
+
+/* FOOTER BASE */
+.site-footer {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* MAIN FOOTER */
+.footer-main {
+  padding: 3rem 0;
+}
+
+@media (min-width: 48rem) {
+  .footer-main {
+    padding: 4rem 0;
+  }
+}
+
+/* GRID */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* BRAND */
+.footer-brand {
+  grid-column: span 1;
+}
+
+.brand-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: hsl(var(--accent));
+  color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Georgia", serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.brand-name {
+  font-family: "Georgia", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.brand-description {
+  font-size: 0.875rem;
+  color: hsl(var(--primary-foreground) / 0.7);
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* COLUMNS */
+.footer-column h4 {
+  font-family: "Georgia", serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--accent));
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  font-size: 0.875rem;
+  color: hsl(var(--primary-foreground) / 0.7);
+  margin-bottom: 0.5rem;
+}
+
+/* LINKS */
+.footer-column a {
+  color: hsl(var(--primary-foreground) / 0.7);
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: hsl(var(--accent));
+}
+
+/* CONTACT */
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* SOCIAL */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-social a {
+  font-size: 1.25rem;
+  color: hsl(var(--primary-foreground) / 0.7);
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: hsl(var(--accent));
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  border-top: 0.0625rem solid hsl(var(--primary-foreground) / 0.1);
+}
+
+.footer-bottom-inner {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: hsl(var(--primary-foreground) / 0.6);
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .footer-bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  color: hsl(var(--primary-foreground) / 0.6);
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: hsl(var(--accent));
+}
